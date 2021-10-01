@@ -1,0 +1,42 @@
+.login-form {
+    width: 30%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+.login-form input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.verify-otp {
+    width: 30%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+.verify-otp input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+button {
+    width: 50%;
+    float: right;
+    background: #1E90FF;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #FFFFFF;
+    color: #1E90FF;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.user-info {
+    display: none;
+    width: 30%;
+    margin: auto;
+}
