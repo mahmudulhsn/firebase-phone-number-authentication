@@ -1,33 +1,26 @@
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        // User is signed in.
+
+        var user = firebase.auth().currentUser;
+        if(user != null){
+            var phone = user.phoneNumber;
+            document.getElementById("userInfo").innerHTML = "Welcome user : " + phone;
+        }
+        document.getElementById("login").style.display = "none";
+        document.getElementById("user_info").style.display = "block";
+    } else {
+      // No user is signed in.
+  
+      document.getElementById("user_info").style.display = "none";
+      document.getElementById("login").style.display = "block";
+  
+    }
+  });
+
 window.onload=function () {
   render();
 };
-
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-  
-      document.getElementById("login-form").style.display = "block";
-      document.getElementById("verify-otp").style.display = "block";
-      document.getElementById("user-info").style.display = "none";
-  
-      var user = firebase.auth().currentUser;
-  
-      if(user != null){
-  
-        var email_id = user;
-        document.getElementById("userInfo").innerHTML = "Welcome User : " + email_id;
-  
-      }
-  
-    } else {
-      // No user is signed in.
-      document.getElementById("login-form").style.display = "none";
-      document.getElementById("verify-otp").style.display = "none";
-      document.getElementById("user-info").style.display = "block";
-  
-    }
-});
-
 
 function render() {
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
@@ -53,7 +46,7 @@ function phoneAuth() {
 function codeVerify() {
     var code=document.getElementById('verificationCode').value;
     codeResult.confirm(code).then(function (result) {
-        alert("Successfully registered");
+        alert("Successfully logged in!");
         var user = result.user;
         console.log(user);
     }).catch(function (error) {
@@ -62,9 +55,9 @@ function codeVerify() {
 }
 
 
-
-
 function logout(){
     firebase.auth().signOut();
-  }
-  
+}
+
+
+

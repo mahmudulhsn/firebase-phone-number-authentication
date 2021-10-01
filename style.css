@@ -1,3 +1,4 @@
+
 .login-form {
     width: 30%;
     margin: auto;
@@ -36,7 +37,6 @@ button:hover {
 }
 
 .user-info {
-    display: none;
     width: 30%;
     margin: auto;
 }

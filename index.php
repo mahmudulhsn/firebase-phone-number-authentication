@@ -4,24 +4,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-form">
-        <h1>Enter number</h1>
-        <form>
-            <input type="text" id="number" placeholder="+880********">
-            <div id="recaptcha-container"></div>
-            <button type="button" onclick="phoneAuth();">SendCode</button>
-        </form>
-    </div>
-    
-    <div class="verify-otp">
-        <h1>Enter Verification code</h1>
-        <form>
-            <input type="text" id="verificationCode" placeholder="Enter verification code">
-            <button type="button" onclick="codeVerify();">Verify code</button>
-        </form>
+    <div class="login" id="login">
+        <div class="login-form" id="login_form">
+            <h1>Enter number</h1>
+            <form>
+                <input type="text" id="number" placeholder="+880********">
+                <div id="recaptcha-container"></div>
+                <button type="button" onclick="phoneAuth();">SendCode</button>
+            </form>
+        </div>
+        
+        <div class="verify-otp" id="verify_otp">
+            <h1>Enter Verification code</h1>
+            <form>
+                <input type="text" id="verificationCode" placeholder="Enter verification code">
+                <button type="button" onclick="codeVerify();">Verify code</button>
+            </form>
+        </div>
     </div>
 
-    <div id="user-info" class="user-info">
+    <div class="user-info" id="user_info">
         <h3>Welcome User</h3>
         <p id="userInfo">Welcome to Firebase web login Example. You're currently logged in.</p>
         <button onclick="logout()">Logout</button>
