@@ -4,8 +4,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 
         var user = firebase.auth().currentUser;
         if(user != null){
-            var phone = user.phoneNumber;
-            document.getElementById("userInfo").innerHTML = "Welcome user : " + phone;
+            // var phone = user.phoneNumber;
+            // document.getElementById("userInfo").innerHTML = "Welcome user : " + user.uid;
+            
+            firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+                document.getElementById("userInfo").innerHTML = "Welcome user : " + idToken;
+              }).catch(function(error) {
+                // Handle error
+              });
         }
         document.getElementById("login").style.display = "none";
         document.getElementById("user_info").style.display = "block";
